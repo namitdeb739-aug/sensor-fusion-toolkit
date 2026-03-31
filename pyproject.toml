@@ -1,7 +1,8 @@
 [project]
-name = "project-name"
+name = "sensor-fusion-toolkit"
 version = "0.1.0"
-description = "A short description of your project"
+description = "Multi-sensor fusion library for robotics perception"
+authors = [{name = "Namit Deb", email = "namit@example.com"}]
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
@@ -34,14 +35,14 @@ ml = [
 ]
 
 [project.scripts]
-project-name = "project_name.main:main"
+sensor-fusion-toolkit = "sensor_fusion_toolkit.main:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/project_name"]
+packages = ["src/sensor_fusion_toolkit"]
 
 [tool.ruff]
 target-version = "py311"
@@ -63,7 +64,7 @@ select = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["project_name"]
+known-first-party = ["sensor_fusion_toolkit"]
 
 [tool.mypy]
 python_version = "3.11"
@@ -88,7 +89,7 @@ search = 'version = "{current_version}"'
 replace = 'version = "{new_version}"'
 
 [[tool.bumpversion.files]]
-filename = "src/project_name/__init__.py"
+filename = "src/sensor_fusion_toolkit/__init__.py"
 search = '__version__ = "{current_version}"'
 replace = '__version__ = "{new_version}"'
 

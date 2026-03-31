@@ -10,4 +10,4 @@ RUN uv sync --no-dev --no-install-project
 COPY src/ src/
 RUN uv sync --no-dev
 
-CMD ["uv", "run", "project-name"]
+CMD ["uv", "run", "sensor-fusion-toolkit"]

@@ -1,8 +1,8 @@
 # python-template
 
-[![CI](https://github.com/namitdeb739/python-template/actions/workflows/ci.yml/badge.svg)](https://github.com/namitdeb739/python-template/actions/workflows/ci.yml)
-[![Docs](https://github.com/namitdeb739/python-template/actions/workflows/docs.yml/badge.svg)](https://namitdeb739.github.io/python-template/)
-[![CodeQL](https://github.com/namitdeb739/python-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/namitdeb739/python-template/actions/workflows/codeql.yml)
+[![CI](https://github.com/namitdeb739-aug/sensor-fusion-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/namitdeb739-aug/sensor-fusion-toolkit/actions/workflows/ci.yml)
+[![Docs](https://github.com/namitdeb739-aug/sensor-fusion-toolkit/actions/workflows/docs.yml/badge.svg)](https://namitdeb739-aug.github.io/sensor-fusion-toolkit/)
+[![CodeQL](https://github.com/namitdeb739-aug/sensor-fusion-toolkit/actions/workflows/codeql.yml/badge.svg)](https://github.com/namitdeb739-aug/sensor-fusion-toolkit/actions/workflows/codeql.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
@@ -53,8 +53,8 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 2. Clone it and run the interactive setup:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/namitdeb739-aug/sensor-fusion-toolkit.git
+cd sensor-fusion-toolkit
 just init
 ```
 
@@ -70,7 +70,7 @@ Already set up? Use `just setup` to reinstall deps and hooks.
 ### Run
 
 ```bash
-uv run project-name
+uv run sensor-fusion-toolkit
 ```
 
 ### Task runner (`just`)
@@ -106,7 +106,7 @@ All recipes also work with plain `uv run` commands if you don't have `just` inst
 ```
 .
 ├── src/
-│   └── project_name/          # Source package (src layout)
+│   └── sensor_fusion_toolkit/          # Source package (src layout)
 │       ├── __init__.py
 │       ├── main.py            # Entry point
 │       ├── config.py          # Typed dataclass configuration
@@ -184,7 +184,7 @@ On every push to `main`, the docs workflow builds the MkDocs site and deploys it
 1. Go to **Settings > Pages** in your GitHub repo
 2. Under **Source**, select **GitHub Actions**
 
-The docs site will be available at `https://your-username.github.io/your-repo/`.
+The docs site will be available at `https://namitdeb739-aug.github.io/sensor-fusion-toolkit/`.
 
 ### Standards enforcement
 
@@ -245,7 +245,7 @@ Two layers of security scanning are built in:
 The publish workflow triggers on GitHub Releases and uses [trusted publishers](https://docs.pypi.org/trusted-publishers/) (no API tokens needed). To set up:
 
 1. Go to [pypi.org](https://pypi.org) → your project → Publishing → Add a new publisher
-2. Enter: GitHub repo `your-username/your-repo`, workflow `publish.yml`, environment `pypi`
+2. Enter: GitHub repo `namitdeb739-aug/sensor-fusion-toolkit`, workflow `publish.yml`, environment `pypi`
 3. Create a GitHub Release — the workflow builds with `uv build` and publishes automatically
 
 ### Dependabot (`dependabot.yml`)
@@ -365,7 +365,7 @@ The `Dockerfile` uses a multi-stage build optimized for fast rebuilds:
 1. Copies `uv` binary from the official image (`ghcr.io/astral-sh/uv`)
 2. Installs dependencies first (`uv sync --no-dev --no-install-project`) — this layer is cached unless `pyproject.toml` or `uv.lock` change
 3. Copies source code and installs the project
-4. Runs via `uv run project-name`
+4. Runs via `uv run sensor-fusion-toolkit`
 
 The `docker-compose.yml` mounts the `data/` directory as a volume and sets `PYTHONUNBUFFERED=1` for real-time log output.
 
@@ -374,7 +374,7 @@ The `docker-compose.yml` mounts the `data/` directory as a volume and sets `PYTH
 A separate `Dockerfile.gpu` is included for ML workloads requiring CUDA:
 
 ```bash
-just docker-build-gpu    # or: docker build -f Dockerfile.gpu -t project-name-gpu .
+just docker-build-gpu    # or: docker build -f Dockerfile.gpu -t sensor-fusion-toolkit-gpu .
 ```
 
 This uses `nvidia/cuda:12.4.1-runtime-ubuntu22.04` as the base image and installs the `[ml]` extras automatically.
@@ -409,7 +409,7 @@ VS Code will prompt to install recommended extensions when you first open the re
 
 ### Version bumping
 
-The template uses [bump-my-version](https://github.com/callowayproject/bump-my-version) to keep version numbers in sync across `pyproject.toml` and `src/project_name/__init__.py`:
+The template uses [bump-my-version](https://github.com/callowayproject/bump-my-version) to keep version numbers in sync across `pyproject.toml` and `src/sensor_fusion_toolkit/__init__.py`:
 
 ```bash
 just release patch    # 0.1.0 → 0.1.1
@@ -449,14 +449,14 @@ uv sync --extra ml
 | `notebooks/` | Jupyter notebooks for exploration and prototyping |
 | `data/` | Datasets (gitignored by default — use DVC for versioning) |
 | `scripts/` | Standalone scripts for data processing, training, evaluation |
-| `src/project_name/config.py` | Typed dataclass configuration (see below) |
+| `src/sensor_fusion_toolkit/config.py` | Typed dataclass configuration (see below) |
 
 ### Configuration
 
-`src/project_name/config.py` provides a typed, dataclass-based config pattern:
+`src/sensor_fusion_toolkit/config.py` provides a typed, dataclass-based config pattern:
 
 ```python
-from project_name.config import Config
+from sensor_fusion_toolkit.config import Config
 
 config = Config(seed=42, data_dir="data/processed")
 ```

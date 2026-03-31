@@ -1,7 +1,7 @@
-site_name: project-name
-site_description: A short description of your project
-repo_url: https://github.com/your-username/your-repo
-repo_name: your-username/your-repo
+site_name: sensor-fusion-toolkit
+site_description: Multi-sensor fusion library for robotics perception
+repo_url: https://github.com/namitdeb739-aug/sensor-fusion-toolkit
+repo_name: namitdeb739-aug/sensor-fusion-toolkit
 
 theme:
   name: material

@@ -6,7 +6,7 @@ If you discover a security vulnerability in this project, please report it respo
 
 **Do not open a public issue.** Instead:
 
-1. Email the maintainers at **[your-email@example.com]**
+1. Email the maintainers at **[namit@example.com]**
 2. Include a description of the vulnerability and steps to reproduce
 3. Allow reasonable time for a fix before public disclosure
 

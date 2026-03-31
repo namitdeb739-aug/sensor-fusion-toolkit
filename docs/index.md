@@ -1,6 +1,6 @@
-# project-name
+# sensor-fusion-toolkit
 
-A short description of your project.
+Multi-sensor fusion library for robotics perception.
 
 ## Overview
 

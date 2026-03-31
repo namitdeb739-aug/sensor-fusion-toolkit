@@ -4,8 +4,8 @@ Auto-generated from docstrings using [mkdocstrings](https://mkdocstrings.github.
 
 ## Main
 
-::: project_name.main
+::: sensor_fusion_toolkit.main
 
 ## Config
 
-::: project_name.config
+::: sensor_fusion_toolkit.config

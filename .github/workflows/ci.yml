@@ -40,7 +40,7 @@ jobs:
           version: "latest"
           python-version: ${{ matrix.python-version }}
       - run: uv sync --dev
-      - run: uv run pytest -v --cov=project_name --cov-report=xml
+      - run: uv run pytest -v --cov=sensor_fusion_toolkit --cov-report=xml
       - name: Upload coverage to Codecov
         if: matrix.python-version == '3.12'
         uses: codecov/codecov-action@v5
